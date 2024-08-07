@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nothing</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .companies {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .company {
+        flex: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="companies"></div>
+
+    <script>
+      const myCompanies = [
+        {
+          name: "company Name 1",
+          criteria: ["criteria 1", "criteria 2"],
+        },
+        {
+          name: "company Name 2",
+          criteria: ["criteria 3", "criteria 4"],
+        },
+        {
+          name: "company Name 3",
+          criteria: ["criteria 5", "criteria 6"],
+        },
+        {
+          name: "company Name 4",
+          criteria: ["criteria 7", "criteria 8"],
+        },
+      ];
+
+      const companies = document.querySelector(".companies");
+
+      myCompanies.map((comp, index) => {
+        const company = document.createElement("div");
+        const lists = document.createElement("ul");
+
+        company.classList.add("company");
+        company.append(lists);
+        const criteriaList = comp.criteria
+          .map((criteria) => `<li>${criteria}</li>`)
+          .join("");
+
+        company.innerHTML = `
+        <p>${comp.name}</p>
+         <ul>
+            ${criteriaList}
+            </ul>
+            `;
+
+        companies.appendChild(company);
+      });
+    </script>
+  </body>
+</html>

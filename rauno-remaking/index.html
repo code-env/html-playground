@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Nothing</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="tile"></div>
+    </div>
+
+    <div class="name">
+      <span>B</span>
+      <span class="up">K</span>
+      <span>M</span>
+    </div>
+
+    <script>
+      const container = document.querySelector("#container"),
+        tile = document.querySelector(".tile");
+
+      for (let i = 0; i < 1599; i++) {
+        container.appendChild(tile.cloneNode());
+      }
+    </script>
+  </body>
+</html>
